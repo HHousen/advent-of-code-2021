@@ -1,13 +1,14 @@
 import math
+import json
 from functools import reduce
 from itertools import permutations
 
 with open("puzzle_input.txt", "r") as puzzle_input:
-    # Read the puzzle input by applying the `eval` function to each line of the
+    # Read the puzzle input by applying the `json.loads` function to each line of the
     # `puzzle_input`. This will create a list where each item is the Python object
     # representation (list of lists of lists etc) of the corresponding line of the
     # `puzzle_input`.
-    puzzle_input = list(map(eval, puzzle_input.read().strip().splitlines()))
+    puzzle_input = list(map(json.loads, puzzle_input.read().strip().splitlines()))
 
 
 def add_right(number, left):
